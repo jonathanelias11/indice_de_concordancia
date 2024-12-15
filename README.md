@@ -1,1 +1,1 @@
-# indice_de_concordancia
+# Calculo do índice de concordancia (Kappa de Cohen)
