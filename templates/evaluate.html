@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliar Artigos</title>
+</head>
+<body>
+    <h1>Avaliar Artigos</h1>
+    <form action="/evaluate" method="post">
+        {% for index, row in articles %}
+        <div>
+            <p><strong>{{ row['Title'] }}</strong> - {{ row['Authors'] }}</p>
+            <label>Avaliador 1:</label>
+            <select name="avaliador1_{{ index }}">
+                <option value="1">Incluir</option>
+                <option value="0">Excluir</option>
+            </select>
+            <label>Avaliador 2:</label>
+            <select name="avaliador2_{{ index }}">
+                <option value="1">Incluir</option>
+                <option value="0">Excluir</option>
+            </select>
+        </div>
+        <hr>
+        {% endfor %}
+        <button type="submit">Salvar Avaliações</button>
+    </form>
+</body>
+</html>
